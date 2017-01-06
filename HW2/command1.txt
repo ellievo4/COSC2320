@@ -1,0 +1,8 @@
+insertword=1:/end
+insertline=2
+insertword=2:/bye
+deleteline=1
+insertword=1:bye/teddy
+deleteword=1:bye
+insertline=2
+insertword=2:/complete

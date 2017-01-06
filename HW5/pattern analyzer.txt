@@ -1,0 +1,21 @@
+0	        1	       1	start
+1	        1	       1	end
+2	        1	       1	end
+3	        1	       1	end
+4	        1	       1	end
+4	        2	       1	start
+5	        2	       1	end
+6	        1	       1	end
+6	        3	       1	start
+7	        3	       1	end
+8	        2	       1	end
+9	        1	       1	end
+10	        3	       1	end
+11	        1	       1	end
+12	        3	       1	end
+13	        1	       1	end
+
+
+.dif file has more lines in output than it should be in the result,
+therefore, these are lines getting from my result taken out to compare 
+with the correct result and analyze the pattern of the correct 1 

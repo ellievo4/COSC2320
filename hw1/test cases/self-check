@@ -1,0 +1,41 @@
+#/bin/bash
+if [ $# -ne 0 ]; then
+    echo "Usage: self-check"
+    exit
+fi
+
+filename="infinitearithmetic"
+echo "Compiling..."
+g++ -std=c++11 *.cpp -o $filename
+if [ $? -ne 0 ]; then
+    echo "Failed to compile, the grade will be 0."
+    exit
+else
+    echo "Done."
+fi
+
+# Test cases are numbered from 1 to 9.
+# digitsPerNode[0] here is just a placeholder.
+digitsPerNode=(0 1 1 1 2 2 2 4 4 4)
+casecount=9
+grade=10
+timeout="2s"
+echo "Begin testing..."
+for casenum in `seq 1 1 $casecount`; do
+    echo -e "\tTest case $casenum"
+    timeout -k $timeout $timeout ./$filename "input=$casenum.txt;digitsPerNode=${digitsPerNode[$casenum]}" 1>$casenum.selfcheck.stdout 2>$casenum.selfcheck.stderr 
+    if [ $? -ne 0 ]; then
+        echo -e "\t\tProgram killed due to timeout ($timeout)."
+    fi
+    # remove any leading zeros in the result if there is any.
+    sed -i "s/\(.*=\)\(0*\)\(.$\)/\1\3/g" $casenum.selfcheck.stdout
+    diff -iEBwu $casenum.stdout $casenum.selfcheck.stdout > $casenum.selfcheck.diff
+    if [ $? -ne 0 ]; then
+        echo -e "\t\tFAILED."
+    else
+        echo -e "\t\tPASSED."
+        rm -f $casenum.selfcheck.diff
+        let grade=grade+10
+    fi
+done
+echo "Your grade is $grade."

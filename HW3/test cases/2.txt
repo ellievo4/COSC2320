@@ -1,0 +1,10 @@
+void
+someFunction {
+  string str = "abc";
+  for loop 1 {
+    for loop 2 {
+      if (array[2]) {
+        Ouch!
+    }
+  } 
+}

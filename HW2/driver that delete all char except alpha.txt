@@ -1,0 +1,35 @@
+#include<iostream>
+#include<string>
+#include<sstream>
+#include<cstdlib>
+
+using namespace std;
+
+int main()
+{
+	string line = "Hi, I am box";
+	istringstream buffer (line);
+	string buf;
+	char str[100];
+	int end=0;
+	while(buffer>>buf) 
+	{
+		cout << buf << endl;
+		for(unsigned i = 0; i<buf.size(); i++)
+		{
+			if (isalpha(buf.at(i)))
+			{
+				str[end]=buf.at(i);
+				end++;
+			}
+		}
+
+			str[end] = '\0';
+			buf = str;
+			cout <<buf<<endl;
+			buf.clear();
+			end=0;
+		}
+	system("Pause");
+	return 0;
+}

@@ -1,0 +1,37 @@
+--- 6.stdout	2015-11-29 21:22:27.210839314 -0600
++++ 6.student.stdout	2015-11-29 21:24:40.170811908 -0600
+@@ -4,20 +4,20 @@
+ 2	1	8	executing
+ 3	1	8	executing
+ 4	1	8	executing
+-4	2	2	start
+-5	2	2	executing
+-6	1	8	executing
+-6	3	3	start
+-7	3	3	executing
+-8	2	2	end
+-9	1	8	executing
+-10	3	3	executing
+-10	4	6	start
+-11	4	6	executing
+-12	1	8	executing
+-13	3	3	end
+-14	4	6	executing
+-15	1	8	end
++   5	        1	       8	executing
++   5	        2	       2	start
++   6	        2	       2	executing
++   7	        1	       8	executing
++   7	        3	       3	start
++   8	        3	       3	executing
++   9	        2	       2	end
++  10	        1	       8	executing
++  11	        3	       3	executing
++  11	        4	       6	start
++  12	        4	       6	executing
++  13	        1	       8	end
++  14	        3	       3	end
++  15	        4	       6	executing
+ 16	4	6	executing
+ 17	4	6	executing
+ 18	4	6	executing
